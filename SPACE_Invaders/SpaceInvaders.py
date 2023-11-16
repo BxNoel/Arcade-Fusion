@@ -13,11 +13,11 @@ running = True
 
 #Title and Icon
 pygame.display.set_caption("Space Invaders")
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load('SPACE_Invaders/ufo.png')
 pygame.display.set_icon(icon)
 
 #PLayer
-playerImg = pygame.image.load('player.png')
+playerImg = pygame.image.load('SPACE_Invaders/player.png')
 playerX = 370
 playerY = 480
 playerXChange = 0
@@ -32,7 +32,7 @@ numOfEnemies = 6
 
 #this creates an array of different enemies
 for i in range(numOfEnemies):
-    ememyImg.append(pygame.image.load('enemy.png'))
+    ememyImg.append(pygame.image.load('SPACE_Invaders/enemy.png'))
     enemyX.append(random.randint(0, 100))
     enemyY.append(random.randint(50,100))
     enemyXChange.append(2)  #this gives each enemy a random speed
@@ -40,7 +40,7 @@ for i in range(numOfEnemies):
 
 
 #bullet... ready means you cant see the bullet on the screen, but fire means the bullet is suppose to be moving
-bulletImg = pygame.image.load('bullet.png')
+bulletImg = pygame.image.load('SPACE_Invaders/bullet.png')
 bulletX = 0
 bulletY = 480
 bulletXChange = 0
@@ -49,11 +49,11 @@ bullet_state = "ready"
 
 
 #background image
-bgImg = pygame.image.load('universe.png')
+bgImg = pygame.image.load('SPACE_Invaders/universe.png')
 bgImg = pygame.transform.scale(bgImg, (800, 600))
 
 #background sounds
-mixer.music.load('bksong.mp3')
+mixer.music.load('SPACE_Invaders//bksong.mp3')
 mixer.music.play(-1)
 
 mixer.music.set_volume(0.2)
@@ -118,7 +118,7 @@ while running:
 
             if event.key == pygame.K_SPACE:
                 if bullet_state is "ready":
-                    bulletSound = mixer.Sound('shot.wav')
+                    bulletSound = mixer.Sound('SPACE_Invaders/shot.wav')
                     bulletSound.play()
                     bulletX = playerX
                     fireBullet(bulletX, bulletY)
@@ -159,7 +159,7 @@ while running:
             # Collision
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            killsounds = mixer.Sound('kill.wav')
+            killsounds = mixer.Sound('SPACE_Invaders/kill.wav')
             killsounds.play()
             bulletY = 480
             bullet_state = "ready"
