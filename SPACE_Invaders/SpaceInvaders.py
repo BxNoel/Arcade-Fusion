@@ -26,17 +26,17 @@ playerXChange = 0
 ememyImg = []
 enemyX = []
 enemyY = []
-enemyXChange = []
+enemyXChange = [] 
 enemyYChnage = []
 numOfEnemies = 6
 
 #this creates an array of different enemies
 for i in range(numOfEnemies):
     ememyImg.append(pygame.image.load('SPACE_Invaders/enemy.png'))
-    enemyX.append(random.randint(0, 100))
-    enemyY.append(random.randint(50,100))
-    enemyXChange.append(2)  #this gives each enemy a random speed
-    enemyYChnage.append(1)
+    enemyX.append(0)
+    enemyY.append(0)
+    enemyXChange.append(random.randint(1,4)) #this gives each enemy a random speed
+    enemyYChnage.append(random.randint(1,4))
 
 
 #bullet... ready means you cant see the bullet on the screen, but fire means the bullet is suppose to be moving
